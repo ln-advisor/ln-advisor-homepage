@@ -179,6 +179,7 @@ function App() {
 
         <nav className="topnav" aria-label="Primary">
           <a href="#features">Features</a>
+          <a href="#analyzer">Analyzer</a>
           <a href="#trust">Trust</a>
           <a href="#workflow">Workflow</a>
           <a href="#start">Start Here</a>
@@ -365,6 +366,38 @@ function App() {
                 <p>{item.body}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="section analyzer-layout" id="analyzer">
+          <div className="analyzer-content">
+            <div className="eyebrow eyebrow-left">HTLC Traffic Analyzer</div>
+            <h2>Live routing intelligence with Conditional Recall.</h2>
+            <p>
+              Instantly catch routing friction and optimize fees by analyzing a real-time stream of HTLC events. 
+              Powered by Conditional Recall, the ephemeral execution context aggressively drops all raw transaction 
+              identifiers and sensitive routing paths immediately after generating aggregated fee suggestions. 
+              Your strategic data is permanently forgotten.
+            </p>
+            <div className="analyzer-features">
+              <article className="analyzer-feature">
+                <span className="analyzer-feature-icon"><BoltIcon /></span>
+                <div>
+                  <strong>Live HTLC Stream</strong>
+                  <span>Consumes real-time forward, settle, and fail events via WebSocket.</span>
+                </div>
+              </article>
+              <article className="analyzer-feature">
+                <span className="analyzer-feature-icon"><ShieldIcon /></span>
+                <div>
+                  <strong>Conditional Recall</strong>
+                  <span>Guarantees raw context is completely purged after aggregation.</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div className="analyzer-visual-container">
+            <ConditionalRecallGraph />
           </div>
         </section>
 
@@ -625,6 +658,47 @@ function MailIcon() {
       <rect x="3" y="5" width="18" height="14" rx="3" />
       <path d="m4 7 8 6 8-6" />
     </svg>
+  );
+}
+
+function ConditionalRecallGraph() {
+  return (
+    <div className="cr-graph" aria-label="Conditional Recall Pipeline Visualization">
+      
+      <div className="cr-stage-box ingest-box">
+        <div className="cr-stage-header">Live Telemetry</div>
+        <div className="cr-events">
+          <div className="cr-event event-forward" />
+          <div className="cr-event event-fail" />
+          <div className="cr-event event-settle" />
+          <div className="cr-event event-forward" />
+        </div>
+      </div>
+
+      <div className="cr-connector" />
+
+      <div className="cr-stage-box context-box">
+        <div className="cr-pulse-ring" />
+        <div className="cr-context-core">
+          <ShieldIcon />
+          <span>Ephemeral Context</span>
+        </div>
+      </div>
+
+      <div className="cr-connector" />
+
+      <div className="cr-stage-box output-box">
+        <div className="cr-suggestion-card">
+          <span className="cr-badge">Raise Fee</span>
+          <strong>peer-beta</strong>
+        </div>
+        <div className="cr-memory-purged">
+          <span>State Purged</span>
+          <span className="cr-purge-line" />
+        </div>
+      </div>
+
+    </div>
   );
 }
 
