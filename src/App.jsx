@@ -71,18 +71,23 @@ const flow = [
 
 const contactChannels = [
   {
+    label: 'GitHub',
+    href: 'https://github.com/ln-advisor/ln-advisor-ui',
+    icon: <GitHubIcon />,
+  },
+  {
     label: 'Twitter',
-    href: 'https://x.com/yourhandle',
+    href: 'https://x.com/ln_advisor',
     icon: <XIcon />,
   },
   {
     label: 'Discord',
-    href: 'https://discord.gg/yourserver',
+    href: 'https://discord.gg/sU7a3wby',
     icon: <DiscordIcon />,
   },
   {
     label: 'Email',
-    href: 'mailto:hello@yourdomain.com',
+    href: 'mailto:lighntingnetwork.advisor@gmail.com',
     icon: <MailIcon />,
   },
 ];
@@ -183,6 +188,13 @@ function App() {
           <a href="#trust">Trust</a>
           <a href="#workflow">Workflow</a>
           <a href="#start">Start Here</a>
+          <a
+            href="https://github.com/ln-advisor/ln-advisor-ui"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -481,8 +493,13 @@ function App() {
             >
               Open Documentation
             </a>
-            <a className="button secondary" href="#workflow">
-              See workflow
+            <a
+              className="button secondary"
+              href="https://github.com/ln-advisor/ln-advisor-ui"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open GitHub
             </a>
           </div>
         </section>
@@ -640,6 +657,14 @@ function XIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+    </svg>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.22 1.84 1.22 1.08 1.82 2.82 1.29 3.5.98.11-.77.42-1.29.76-1.59-2.67-.3-5.47-1.31-5.47-5.86 0-1.3.47-2.36 1.23-3.2-.12-.3-.53-1.52.12-3.16 0 0 1.01-.32 3.3 1.22a11.57 11.57 0 0 1 6 0c2.28-1.54 3.29-1.22 3.29-1.22.66 1.64.25 2.86.12 3.16.77.84 1.23 1.9 1.23 3.2 0 4.56-2.81 5.55-5.49 5.85.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
     </svg>
   );
 }
